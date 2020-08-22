@@ -275,6 +275,7 @@ public abstract class Gui implements TerminableConsumer {
         if (this.valid) {
             throw new IllegalStateException("Gui is already opened.");
         }
+        
         this.firstDraw = true;
         this.invalidated = false;
         try {
