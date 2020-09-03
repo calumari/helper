@@ -26,8 +26,10 @@
 package me.lucko.helper.random;
 
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 import java.util.stream.Stream;
@@ -168,5 +170,10 @@ final class RandomSelectorImpl<E> implements RandomSelector<E> {
             final int column = random.nextInt(this.probabilities.length);
             return random.nextDouble() < this.probabilities[column] ? column : this.alias[column];
         }
+    }
+
+    @Override
+    public List<E> getElements() {
+        return ImmutableList.copyOf(elements);
     }
 }

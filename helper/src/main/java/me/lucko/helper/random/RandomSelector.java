@@ -26,6 +26,7 @@
 package me.lucko.helper.random;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Stream;
@@ -104,4 +105,6 @@ public interface RandomSelector<E> {
     default Stream<E> stream() {
         return stream(ThreadLocalRandom.current());
     }
+
+    List<E> getElements();
 }
